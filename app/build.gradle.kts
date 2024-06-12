@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace = "com.example.multimoduleapp"
-    compileSdk = 34
+    compileSdk = Android.compileSdk
 
     defaultConfig {
         applicationId = "com.example.multimoduleapp"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = Android.minSdk
+        targetSdk = Android.targetSdk
+        versionCode = Android.versionCode
+        versionName = Android.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -40,7 +40,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = Compose.composeVersion
     }
     packaging {
         resources {
