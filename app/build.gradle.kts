@@ -5,15 +5,15 @@ plugins {
 
 android {
     namespace = "com.example.multimoduleapp"
-    compileSdk = Android.compileSdk
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.multimoduleapp"
-        minSdk = Android.minSdk
-        targetSdk = Android.targetSdk
-        versionCode = Android.versionCode
-        versionName = Android.versionName
-
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+        multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -40,7 +40,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Compose.composeVersion
+        kotlinCompilerExtensionVersion = "1.5.0"
     }
     packaging {
         resources {
@@ -58,9 +58,11 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
     implementation(libs.androidx.material)
     implementation(libs.androidx.material3.android)
+    implementation("androidx.multidex:multidex:2.0.1")
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -68,4 +70,5 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
 }
